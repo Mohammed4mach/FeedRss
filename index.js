@@ -46,7 +46,7 @@ for(const sit of sites){
         }
    })
     }catch(e){
-        console.log(e);
+        console.log("I has problem in update(): "+e);
         
     }
  }
@@ -62,6 +62,10 @@ async function run(){
 run()
 
 app.get("/", (req,res)=>{
+    all.sort(function(a,b){
+        return new Date(b.isoDate) - new Date(a.isoDate);
+    })
+    
     res.send(JSON.stringify(all,null, 3))
 })
 const PORT = process.env.PORT || 3000
