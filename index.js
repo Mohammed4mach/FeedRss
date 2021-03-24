@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 let Feed = require('rss-parser')
+let cors = require("cors")
 let parser = new Feed()
 const sites = require('./sites.json')
 const cron = require("node-cron")
+const shell = require("shelljs")
 var all = []
+app.use(cors())
 function add(title, link, date){
     var post = {
         title: title,
@@ -28,21 +31,17 @@ for(const site of sites){
     
  }
 }
- 
+ /*
  async function update(){
- cron.schedule('* * * * * *', async () => {
 
 for(const sit of sites){
     try{
      const now = await parser.parseURL(sit.url);
     now.items.forEach(ite =>{
-        var a = all.find(i=> i == ite.item)
-        if (a == ite.item) {
-        }else{
-            all.push(ite.item)
-
-            console.log("done " + ite.item);
-
+        var a = all.find(i=> i == ite.title)
+        if (a != ite.title) {
+            all.push(ite)
+            console.log("done " + ite);
         }
    })
     }catch(e){
@@ -50,17 +49,16 @@ for(const sit of sites){
         
     }
  }
-  })
 
 }
+*/
 
 
 async function run(){
-   await push()
-      await update()
-}
-run()
 
+   await push()
+}
+    run()
 app.get("/", (req,res)=>{
     all.sort(function(a,b){
         return new Date(b.isoDate) - new Date(a.isoDate);
@@ -69,4 +67,8 @@ app.get("/", (req,res)=>{
     res.send(JSON.stringify(all,null, 3))
 })
 const PORT = process.env.PORT || 3000
-app.listen(PORT, ()=> console.log("in port "+PORT))
+app.listen(PORT, ()=> cron.schedule('* * * * *', function(){
+     if (shell.exec("node index.js").code !== 0) {
+        console.log("somthing")
+     }
+}))
