@@ -4,8 +4,15 @@ let Feed = require('rss-parser')
 let parser = new Feed()
 const sites = require('./sites.json')
 const cron = require("node-cron")
-const convert = require("rss-to-json")
 var all = []
+function add(title, link, date){
+    var post = {
+        title: title,
+        link: link,
+        date: date
+    } 
+    all.push(post)
+}
  async function push(){
 for(const site of sites){
     try{
