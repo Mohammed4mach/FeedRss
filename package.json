@@ -2,11 +2,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "get-title-at-url": "^1.1.8",
     "node-cron": "^3.0.0",
     "nodemon": "^2.0.7",
     "rss-parser": "^3.12.0",
     "rss-to-json": "^1.1.2",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "url-domain-name": "^1.0.3",
+    "url-to-title": "^1.0.6"
   },
   "name": "feedrss",
   "version": "1.0.0",
