@@ -23,17 +23,9 @@ function add(title, link, date, name){
 for(const site of sites){
     try{
     const now = await parser.parseURL(site.url);
-        var nameSite = now.title;
-
     now.items.forEach(item =>{
-        const domain = ""+Domain.from(item.link);
-        
-        titleFromUrl("http://google.com/", function(title){
-               // nameSite = title
-        })
-        console.log(nameSite);
-        
-        add(item.title,item.link,item.isoDate,nameSite)
+        const domain = Domain.from(item.link);
+        add(item.title,item.lin,item.isoDate,domain)
         //all.push(item)
         }
     )
