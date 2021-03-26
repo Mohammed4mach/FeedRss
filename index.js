@@ -5,6 +5,9 @@ let cors = require("cors")
 let parser = new Feed()
 const sites = require('./sites.json')
 const Domain = require('url-domain-name');
+const fetch = require('node-fetch');
+wake()
+
 setInterval(() => {
     
 var all = []
@@ -49,5 +52,22 @@ app.get("/", (req,res)=>{
     res.send(JSON.stringify(all,null, 3))
 })
 }, 10000);
+
+
+function wake() {
+
+  try {
+
+    setInterval(() => {
+      fetch('https://mersal-info.herokuapp.com/').then(res => console.log(`response-ok: ${res.ok}, status: ${res.status}`))
+        .catch(err => console.error(`Error occured: ${err}`))
+    }, 1500000);
+
+  } catch(err) {
+      console.error('Error occured: retrying...')
+      return setTimeout(() => wake(), 10000);
+  };
+
+}
 const PORT = process.env.PORT || 3000 || 4050
-app.listen(PORT, ()=>console.log("done..."))
+app.listen(PORT, ()=>console.log('done...'))
