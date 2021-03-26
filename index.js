@@ -48,8 +48,6 @@ app.get("/", (req,res)=>{
     
     res.send(JSON.stringify(all,null, 3))
 })
-
-}, 500);
-
+}, 10000);
 const PORT = process.env.PORT || 3000 || 4050
 app.listen(PORT, ()=>console.log("done..."))
