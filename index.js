@@ -25,7 +25,7 @@ for(const site of sites){
     const now = await parser.parseURL(site.url);
     now.items.forEach(item =>{
         const domain = Domain.from(item.link);
-        add(item.title,item.lin,item.isoDate,domain)
+        add(item.title,item.link,item.isoDate,domain)
         //all.push(item)
         }
     )
