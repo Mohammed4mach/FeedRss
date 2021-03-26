@@ -4,10 +4,9 @@ let Feed = require('rss-parser')
 let cors = require("cors")
 let parser = new Feed()
 const sites = require('./sites.json')
-const cron = require("node-cron")
-const shell = require("shelljs")
 const Domain = require('url-domain-name');
-const titleFromUrl = require('get-title-at-url');
+setInterval(() => {
+    
 var all = []
 app.use(cors())
 function add(title, link, date, name){
@@ -50,5 +49,9 @@ app.get("/", (req,res)=>{
     
     res.send(JSON.stringify(all,null, 3))
 })
+console.log("end");
+
+}, 15000);
+
 const PORT = process.env.PORT || 3000 || 4050
 app.listen(PORT, ()=>console.log("done..."))
