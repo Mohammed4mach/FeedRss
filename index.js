@@ -62,6 +62,10 @@ function wake() {
       fetch('https://mersal-info.herokuapp.com/').then(res => console.log(`response-ok: ${res.ok}, status: ${res.status}`))
         .catch(err => console.error(`Error occured: ${err}`))
     }, 1500000);
+    setInterval(() => {
+      fetch('https://all-news-mr.herokuapp.com/').then(res => console.log(`response-ok: ${res.ok}, status: ${res.status}`))
+        .catch(err => console.error(`Error occured: ${err}`))
+    }, 1500000);
 
   } catch(err) {
       console.error('Error occured: retrying...')
