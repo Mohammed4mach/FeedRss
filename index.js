@@ -25,7 +25,6 @@ for(const site of sites){
     now.items.forEach(item =>{
         const domain = Domain.from(item.link);
         add(item.title,item.link,item.isoDate,domain)
-        //all.push(item)
         }
     )
     }catch(e){
@@ -49,9 +48,8 @@ app.get("/", (req,res)=>{
     
     res.send(JSON.stringify(all,null, 3))
 })
-console.log("end");
 
-}, 15000);
+}, 500);
 
 const PORT = process.env.PORT || 3000 || 4050
 app.listen(PORT, ()=>console.log("done..."))
