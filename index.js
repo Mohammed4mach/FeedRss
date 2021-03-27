@@ -6,7 +6,7 @@ let parser = new Feed()
 const sites = require('./sites.json')
 const Domain = require('url-domain-name');
 const fetch = require('node-fetch');
-wake()
+//wake()
 
 setInterval(() => {
     
