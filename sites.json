@@ -22,5 +22,28 @@
     {
         "name":"وكالة الأنباء",
         "url":"http://www.ami.mr/rss.xml"
+    },
+    {
+        "name":"الصحراء",
+        "url": "http://essahraa.net/?q=taxonomy/term/1/feed"
+    },{
+        "name":"الساحة",
+        "url": "http://www.essaha.info/?q=taxonomy/term/1/feed"
+    },{
+        "name":"وكالة كيفة للانباء",
+        "url": "http://kiffainfo.net/spip.php?page=backend"
+    },
+    {
+        "name":"زهرة شنقيط",
+        "url": "http://zahraa.mr/taxonomy/term/1/feed"
+    },{
+        "name":"اقلام حرة",
+        "url": "http://aqlame.com/rss.xml"
+    },{
+        "name":"ميادين",
+        "url": "http://meyadin.net/taxonomy/term/1/feed"
+    },{
+        "name":"المسابقات",
+        "url": "https://concours.mr/feed/"
     }
 ]
