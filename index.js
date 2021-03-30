@@ -4,7 +4,6 @@ let Feed = require('rss-parser')
 let cors = require("cors")
 let parser = new Feed()
 const sites = require('./sites.json')
-const Domain = require('url-domain-name');
 const fetch = require('node-fetch');
 //wake()
 
@@ -26,8 +25,7 @@ for(const site of sites){
     try{
     const now = await parser.parseURL(site.url);
     now.items.forEach(item =>{
-        const domain = Domain.from(item.link);
-        add(item.title,item.link,item.isoDate,domain)
+        add(item.title,item.link,item.isoDate,site.name)
         }
     )
     }catch(e){

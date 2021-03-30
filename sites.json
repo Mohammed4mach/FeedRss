@@ -1,14 +1,26 @@
 [
     {
+        "name":"الصحراء ميديا",
         "url": "https://www.saharamedias.net/feed/"
     },
     {
+        "name":"الأخبار المستقلة",
         "url": "https://alakhbar.info/?q=rss.xml"
     },
     {
+        "name":"بلوار ميديا",
         "url":"https://www.bellewarmedia.com/feed/"
     },
     {
+        "name":"التلفزة الموريتانية",
         "url":"http://tvm.mr/ar/feed/"
+    },
+    {
+        "name":"مراسلون",
+        "url":"http://mourassiloun.com/taxonomy/term/6/all/feed"
+    },
+    {
+        "name":"وكالة الأنباء",
+        "url":"http://www.ami.mr/rss.xml"
     }
 ]
