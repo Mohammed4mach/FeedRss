@@ -68,7 +68,7 @@ function wake() {
   } catch(err) {
       console.error('Error occured: retrying...')
       return setTimeout(() => wake(), 10000);
-  };
+  }; 
 
 }
 const PORT = process.env.PORT || 3000 || 4050
